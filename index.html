@@ -8,6 +8,7 @@
    <style>
          body {
             background: whitesmoke;
+            text-align: center;
          }
 
          .blue {
@@ -19,13 +20,26 @@
          .green {
             background: lightgreen;
          }
+
+         .buttons {
+            padding: 2em;
+            margin: 0 auto;
+            text-align: center;
+            height: auto;
+            width: 300px;
+            border: 2px solid black;
+         }
    </style>
 </head>
 <body>
 
+   <div class="container buttons">
+      <p>bg color</p>
    <button id="btn-blue">blue</button>
    <button id="btn-red">red</button>
    <button id="btn-green">green</button>
+
+   </div>
 
    <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -38,20 +52,25 @@
       })
       $(function() {
 
-         $btn = $('#btn-blue');
-         $btn.on('click', function() {
+         $('#btn-blue').on('click', function() {
+            $('body').removeClass('red');
+            $('body').removeClass('green');
             $('body').addClass('blue');
          });
 
-         $btn = $('#btn-red');
-         $btn.on('click', function() {
+         $('#btn-red').on('click', function() {
+            $('body').removeClass('green');
+            $('body').removeClass('blue');
             $('body').addClass('red');
          });
 
-         $btn = $('#btn-green');
-         $btn.on('click', function() {
+         $('#btn-green').on('click', function() {
+            $('body').removeClass('red');
+            $('body').removeClass('blue');
             $('body').addClass('green');
          });
+
+
 
       });
    </script>
